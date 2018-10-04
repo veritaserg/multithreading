@@ -22,7 +22,7 @@ public class Multithreading {
                         System.out.println((name.substring(name.lastIndexOf(".") + 1) + " " + f.length()));
                     }
             );
-        }
+        }executur.shutdown();
     }
 }
 
