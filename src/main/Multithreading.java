@@ -8,21 +8,15 @@ import java.util.concurrent.Executors;
 
 public class Multithreading {
     public static void main(String[] args) {
-
-        File file = new File("C:\\Users\\server\\IdeaProjects\\ Multithreading\\src\\resources");
+String path ="C:\\Users\\server\\IdeaProjects\\ Multithreading\\src\\resources";
+        File file = new File(path);
         List<File> files = new ArrayList<>();
         files.add(file);
+InfoFile infoFil = new InfoFile();
+infoFil.putFile(files);
 
 
-        ExecutorService executor = Executors.newFixedThreadPool(4);
-        for (File f : files) {
-            executor.submit(
-                    () -> {
-                        String name = f.getName();
-                        System.out.println((name.substring(name.lastIndexOf(".") + 1) + " " + f.length()));
-                    }
-            );
-        }executor.shutdown();
+
     }
 }
 
